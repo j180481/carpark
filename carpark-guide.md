@@ -66,7 +66,7 @@ This guide provides detailed step-by-step instructions for completing the projec
 Include a screenshot of your GitHub repository **after** you have pushed your initial commit.
 
 ```markdown
-![Initial commit](images/mu_image.png)
+![Initial commit](carpark/screenshots/screenshot1.PNG)
 ```
 
 ### Identify classes, methods, and attributes
