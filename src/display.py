@@ -11,6 +11,10 @@ class Display:
     def __str__(self):
         return f'{self.id} {self.message}'
 
+    def update(self, data):
+        for key, value in data.items():
+            print(f"{key}: {value}")
+
 
 #display1 = Display(id="Display 1:", car_park=2, message="Welcome to the car park", is_on=True)
 #print(display1)
