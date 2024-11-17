@@ -446,9 +446,9 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
-```
+![Added methods to the car park class](docs\screenshots\screenshot4.PNG)
+
+![Added methods to the car park class](docs\screenshots\screenshot5.PNG)
 
 Answer the following questions:
 > **Review Questions**
