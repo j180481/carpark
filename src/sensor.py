@@ -3,13 +3,13 @@ import random
 
 
 class Sensor(ABC):
-    def __init__(self, id, is_active, car_park):
-        self.id = id
+    def __init__(self, identity, is_active, car_park):
+        self.identity = identity
         self.is_active = is_active
         self.car_park = car_park
 
     def __str__(self):
-        return f'Sensor {self.id} is active: {self.is_active}'
+        return f'Sensor {self.identity} is active: {self.is_active}'
 
     @abstractmethod
     def update_car_park(self, plate):
