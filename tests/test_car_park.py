@@ -54,10 +54,10 @@ class TestCarPark(unittest.TestCase):
 
     def test_log_file_created(self):
         new_carpark = CarPark("123 Example Street", 100, log_file = self.log_file_name)
-        self.assertTrue(path(self.log_file_name).exists())
+        self.assertTrue(Path(self.log_file_name).exists())
 
     def tearDown(self):
-        Path("new_log.txt").unlink(missing_okay=True)
+        Path("new_log.txt").unlink(missing_ok=True)
 
     def test_car_logged_when_entering(self):
         new_carpark = CarPark("123 Example Street", 100, log_file=self.log_file_name)
@@ -74,9 +74,9 @@ class TestCarPark(unittest.TestCase):
         self.car_park.remove_car("NEW-001")
         with self.car_park.log_file.open() as f:
             last_line = f.readlines()[-1]
-        self.assertIn(last_line, "NEW-001")  # check plate entered
-        self.assertIn(last_line, "exited")  # check description
-        self.assertIn(last_line, "\n")  # check entry has a new line
+        self.assertIn("NEW-001", last_line)  # check plate exited
+        self.assertIn("exited", last_line)  # check description
+        self.assertIn("\n", last_line)  # check entry has a new line
 
 
 
