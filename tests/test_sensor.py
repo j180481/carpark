@@ -42,7 +42,7 @@ class TestSensor(unittest.TestCase):
         #And here, i'm checking to make sure the fake plate is added
         self.assertIn(plate, self.exit_sensor.car_park.plates)
 
-        #calling the exit sensors detect_vehicle function, which should remove the plate
+        #calling the exit sensors detect_vehicle method, which should remove the plate
         self.exit_sensor.detect_vehicle()
 
         #and lastly, checking to make sure the plate is not in the list and removed as expected
