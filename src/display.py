@@ -6,7 +6,7 @@ class Display:
         self.car_park = car_park
 
     def __str__(self):
-        return f'{self.identity} {self.message}'
+        return f'Display {self.identity}: {self.message}'
 
     def update(self, data):
         #self.message = data["message"]
