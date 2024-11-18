@@ -61,7 +61,7 @@ class CarPark:
 
     def write_config(self):
         with open(self.config_file, "w") as f:
-            json.dump({"location": self.location, "capacity": self.capacity, "log_file": self.log_file}, f)
+            json.dump({"location": self.location, "capacity": self.capacity, "log_file": str(self.log_file)}, f)
 
     @classmethod
     def load_config(cls, config_file=Path("config.json")):
