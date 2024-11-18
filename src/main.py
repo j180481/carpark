@@ -16,7 +16,9 @@ display = Display(identity=1, message="Welcome to Moondalup", is_on=True, car_pa
 print(display)
 
 car_park.register(entry_sensor)
+
 car_park.register(exit_sensor)
+
 car_park.register(display)
 
 for i in range(10):
