@@ -30,14 +30,14 @@ class TestSensor(unittest.TestCase):
         plate = "FAKE-6311"
 
         self.entry_sensor.detect_vehicle()
-        """then we check to see that the plate variable is in the car_park plates attribute containing the list of plates"""
+        """we check to see that the plate variable is in the car_park plates attribute containing the list of plates"""
         self.assertIn(plate, self.entry_sensor.car_park.plates)
 
     def test_exit_sensor_detect_vehicle(self):
         """using the previous test as a reference simply for clean output i have matched the plate variable"""
         plate = "FAKE-6311"
 
-        """since we are specifically testing the exit sensor, i manually add the fake plate for this test purpose specifically"""
+        """since we are specifically testing the exit sensor, i manually add plate for this test purpose specifically"""
         self.exit_sensor.car_park.plates = [plate]
         """And here, i'm checking to make sure the fake plate is added"""
         self.assertIn(plate, self.exit_sensor.car_park.plates)
