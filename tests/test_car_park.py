@@ -53,7 +53,7 @@ class TestCarPark(unittest.TestCase):
             car_park_register_test.register(string_object)
 
     def test_log_file_created(self):
-        new_carpark = CarPark("123 Example Street", 100, log_file = self.log_file_name)
+        new_carpark = CarPark("123 Example Street", 100, log_file=self.log_file_name)
         self.assertTrue(Path(self.log_file_name).exists())
 
     def tearDown(self):
@@ -77,8 +77,6 @@ class TestCarPark(unittest.TestCase):
         self.assertIn("NEW-001", last_line)  # check plate exited
         self.assertIn("exited", last_line)  # check description
         self.assertIn("\n", last_line)  # check entry has a new line
-
-
 
 
 if __name__ == "__main__":
