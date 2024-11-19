@@ -1,12 +1,13 @@
 from car_park import CarPark
 from sensor import EntrySensor, ExitSensor
 from display import Display
+from pathlib import Path
 
-#car_park = CarPark("Moondalup", 100, log_file="moondalup.txt")
-
-#car_park.write_config()
-
-car_park = CarPark.load_config()
+if not Path("config.json").exists():
+    car_park = CarPark("Moondalup", 100, log_file="moondalup.txt")
+    car_park.write_config()
+else:
+    car_park = CarPark.load_config()
 
 entry_sensor = EntrySensor(identity=1, is_active=True, car_park=car_park)
 
