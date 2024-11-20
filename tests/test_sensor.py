@@ -8,13 +8,22 @@ from sensor import EntrySensor, ExitSensor
 
 
 class TestSensor(unittest.TestCase):
+    """
+    Here we are going to set up and test an abstract base class of sensor.
+    Including the initialization and attributes.
+    And the detect vehicle method for the subclasses EntrySensor and ExitSensor.
+    """
 
     def setUp(self):
         self.entry_sensor = EntrySensor(identity=1, is_active=True, car_park=CarPark(capacity=10, location="ridgeracer"))
         self.exit_sensor = ExitSensor(identity=2, is_active=True, car_park=CarPark(capacity=10, location="ridgeracer"))
 
     def test_sensor_initialized_with_all_attributes(self):
-        """testing that the sensors are initialized properly"""
+        """
+        testing that the sensors are initialized properly
+
+
+        """
         self.assertEqual(self.entry_sensor.identity, 1)
         self.assertEqual(self.entry_sensor.is_active, True)
         self.assertIsInstance(self.entry_sensor.car_park, CarPark)
