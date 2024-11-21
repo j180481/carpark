@@ -73,11 +73,11 @@ Include a screenshot of your GitHub repository **after** you have pushed your in
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes | Methods |
-| ---------- | ---------- |---------|
-| `CarPark`    |            | init    |
-| `Sensor`     |            | init    |
-| `Display`    |            | init    |
+| Class Name | Attributes          | Methods                               |
+| ---------- |---------------------|---------------------------------------|
+| `CarPark`    | *location *Capacity | *init *add_car *remove_car            |
+| `Sensor`     | *id *is_active      | *init *detect_vehicle *detect_vehicle |
+| `Display`    | *id *message        | *init *update *print_display          |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -371,10 +371,27 @@ You may want to see the number of available bays, the current temperature, and t
 Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which class is responsible for each piece of information? There's no right or wrong answer here. But you should be able to justify your answer.
 
 >Q. Which class is responsible for the number of available bays (and why)?
->
+> 
+> I think the CarPark class is responsible for the number of available bays because it is the CarPark class which
+>dictates the capacity for how many cars and the CarPark class which is responsible for adding/removing cars from the
+> the car park using the methods add_car and remove_car. Some key attributes to support this; capacity and plates.
+> Comparing the number cars in "plates" to the "capacity" variable is how we can calculate the number of available bays.
+> Which CarPark is responsible for managing.
+> 
 >Q. Which class is responsible for the current temperature (and why)?
->
+> 
+> I think the CarPark class is responsible for the current temperature. The sensor classes are responsible for 
+> dynamic data of vehicles - incoming and outgoing cars. The CarPark class is responsible for managing its own state. And the 
+> Display classes is responsible for receiving the data from the CarPark class and updating its display with that
+> data.
+> 
 >Q. Which class is responsible for the time (and why)?
+> 
+> I think the CarPark class is responsible for time for similar reasons to temperature. I don't think it is the 
+> responsibility of sensor objects or display objects to keep track of the time. The responsibility of the sensors are
+> to track the activity of vehicles and the display objects responsibility is then to display data aggregated in the
+> CarPark class to the customer/user. Current time/current temperature/current available bays are tracked within the
+> CarPark class as it is responsible for its own state.
 >
 --------
 
@@ -455,17 +472,28 @@ Answer the following questions:
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - _The number of available bays_
->      `Answer here...`
+>      `I think the CarPark class is responsible for the number of available bays because it is the CarPark class which
+>dictates the capacity for how many cars and the CarPark class which is responsible for adding/removing cars from the
+> the car park using the methods add_car and remove_car. Some key attributes to support this; capacity and plates.
+> Comparing the number cars in "plates" to the "capacity" variable is how we can calculate the number of available bays.
+> Which CarPark is responsible for managing.`
 >    - _The current temperature_
->      `Answer here...`
+>      `I think the CarPark class is responsible for the current temperature. The sensor classes are responsible for 
+> dynamic data of vehicles - incoming and outgoing cars. The CarPark class is responsible for managing its own state. And the 
+> Display classes is responsible for receiving the data from the CarPark class and updating its display with that
+> data.`
 >    - _The time_
->      `Answer here...`
+>      `I think the CarPark class is responsible for time for similar reasons to temperature. I don't think it is the 
+> responsibility of sensor objects or display objects to keep track of the time. The responsibility of the sensors are
+> to track the activity of vehicles and the display objects responsibility is then to display data aggregated in the
+> CarPark class to the customer/user. Current time/current temperature/current available bays are tracked within the
+> CarPark class as it is responsible for its own state.`
 >
 > 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
+>    `In a way, a property is a special form of attribute, sometimes called a "managed" attribute or a method we can access like an attribute. A property can be used to control access to an attribute and encapsulate the data, as any external method or code interacts with the property not the attribute. A property cannot be overwritten directly. Properties also come with their own methods; getter, setter and deleter. And properties are defined using the @property decorator. `
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+>    `I think we use a dictionary for a few reasons. A dictionary can hold many key, values representing different states or data controller or aggregated within the CarPark class. For instance, we can hold the number of available bays, the current time, the current temperature all within one variable containing the dictionary "data". In this way, it is convenient. Any state tracked by the car park can be held in this one variable and is easily updated. However, i also think this could lead to confusion, especially if we decide to scale the use of data and begin to include many many more key values in the data dictionary and the purpose or use for this variable becomes very abstract and broad very quickly. This could lead to complicated errors in regards to debugging if something is missing or incorrect in the key names for instance and passing the data to different methods, attempting to debug becomes overcomplicated.  `
 
 #### Add a detect vehicle method to the Sensor class
 
@@ -1075,9 +1103,8 @@ In your final submission, you must include any files you created or modified. Th
 
 1. Add a screenshot of the output of the `main.py` file:
 
-   ```markdown
-   ![Main.py output](images/main-py.png)
-   ```
+![Main.py output](docs\screenshots\mainoutput.PNG)
+ 
 
 2. Commit your changes to the local repository. Tag the commit with `v1`, so your lecturer can find it. Ensure the commit includes the log and config files (though you would typically ignore them).
 3. Push the tag to the remote repository.
