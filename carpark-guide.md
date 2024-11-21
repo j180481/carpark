@@ -1103,7 +1103,7 @@ In your final submission, you must include any files you created or modified. Th
 
 1. Add a screenshot of the output of the `main.py` file:
 
-![Main.py output](docs\screenshots\mainoutput.PNG)
+![Main.py outp " ut](docs\screenshots\mainoutput.PNG)
  
 
 2. Commit your changes to the local repository. Tag the commit with `v1`, so your lecturer can find it. Ensure the commit includes the log and config files (though you would typically ignore them).
@@ -1115,11 +1115,10 @@ In your final submission, you must include any files you created or modified. Th
 
 4. Release your code on GitHub. You can do this by going to the releases section and selecting "Create a new release". Give the release a title ("Project Submission") and description. Then click "Publish release". Include a screenshot of the release:
 
-   ```markdown
-   ![Create a release](images/create-release.png)
+![Create a release](docs\screenshots\screenshot12.PNG)
 
-   ![Publish a release](images/publish-release.png)
-   ```
+![Publish a release](docs\screenshots\screenshot13.PNG)
+
 
 5. Congratulations! You have completed the project. You can now submit the assignment via Blackboard. Take the time to reflect on your work and write any notes and observations down.
 
