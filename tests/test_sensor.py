@@ -15,7 +15,8 @@ class TestSensor(unittest.TestCase):
     """
 
     def setUp(self):
-        self.entry_sensor = EntrySensor(identity=1, is_active=True, car_park=CarPark(capacity=10, location="ridgeracer"))
+        self.entry_sensor = EntrySensor(identity=1, is_active=True,
+                                        car_park=CarPark(capacity=10, location="ridgeracer"))
         self.exit_sensor = ExitSensor(identity=2, is_active=True, car_park=CarPark(capacity=10, location="ridgeracer"))
 
     def test_sensor_initialized_with_all_attributes(self):
